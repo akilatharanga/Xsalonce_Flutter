@@ -13,6 +13,67 @@ const salonData = [
     'imgUrl':
         'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
     'bgColor': Color(0xffFFF0EB),
+
+    'name': 'salon chathu',
+    'address': '11/4 , Bodiligama Road , Katana',
+    'location': {'latitude': 7.084, 'longitude': 80.0098},
+    'nearest_city': 'Katana',
+    'open_status': null,
+    'description':
+        'A beauty salon is an establishment that offers a variety of cosmetic treatments and cosmetic services for men and women. Beauty salons may offer a variety of services including professional hair cutting and styling, manicures and pedicures, and often cosmetics, makeup and makeovers.',
+    'shedule': [
+      {
+        'date': 'Monday',
+        'openTime': '10:00',
+        'closeTime': '19:00',
+        'open': true,
+      },
+      {
+        'date': 'Tuesday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+      {
+        'date': 'Wednesday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+      {
+        'date': 'Thursday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+      {
+        'date': 'Friday',
+        'openTime': '06:00',
+        'closeTime': '18:00',
+        'open': true,
+      },
+      {
+        'date': 'Saturday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+      {
+        'date': 'Sunday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+    ],
+    'about_us': null,
+    'pro_pic_1':
+        'https://res.cloudinary.com/xsalonce/image/upload/v1653639235/xsalonce_images/mf1clk4cwm3642eauxdc.jpg',
+    'pro_pic_2':
+        'https://res.cloudinary.com/xsalonce/image/upload/v1653639246/xsalonce_images/yqouxjtfhnpe25lpyc9r.jpg',
+    'gallery': [],
+    // 'category': ['Cleanup', 'Massage'],
+    'owners_id': {},
+    'product': []
   },
   {
     'salonName': 'Salon Butello',
@@ -22,6 +83,67 @@ const salonData = [
     'imgUrl':
         'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1611&q=80',
     'bgColor': Color(0xffEBF6FF),
+
+    'name': 'hair with flair',
+    'address': '78/4 , Dagonna Road , Minuwangoda',
+    'location': {'latitude': 7.084, 'longitude': 80.0098},
+    'nearest_city': 'Katana',
+    'open_status': null,
+    'description':
+        'A beauty salon is an establishment that offers a variety of cosmetic treatments and cosmetic services for men and women. Beauty salons may offer a variety of services including professional hair cutting and styling, manicures and pedicures, and often cosmetics, makeup and makeovers.',
+    'shedule': [
+      {
+        'date': 'Monday',
+        'openTime': '10:00',
+        'closeTime': '19:00',
+        'open': true,
+      },
+      {
+        'date': 'Tuesday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+      {
+        'date': 'Wednesday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+      {
+        'date': 'Thursday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+      {
+        'date': 'Friday',
+        'openTime': '06:00',
+        'closeTime': '18:00',
+        'open': true,
+      },
+      {
+        'date': 'Saturday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+      {
+        'date': 'Sunday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+    ],
+    'about_us': null,
+    'pro_pic_1':
+        'https://res.cloudinary.com/xsalonce/image/upload/v1653639235/xsalonce_images/mf1clk4cwm3642eauxdc.jpg',
+    'pro_pic_2':
+        'https://res.cloudinary.com/xsalonce/image/upload/v1653639246/xsalonce_images/yqouxjtfhnpe25lpyc9r.jpg',
+    'gallery': [],
+    // 'category': ['Cleanup', 'Massage'],
+    'owners_id': {},
+    'product': []
   },
   {
     'salonName': 'Salon Opal',
@@ -31,7 +153,138 @@ const salonData = [
     'imgUrl':
         'https://images.unsplash.com/photo-1632345031435-8727f6897d53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
     'bgColor': Color(0xffFFF0EB),
+
+    'name': 'salon opal',
+    'address': '11/4 , Oruthota Road , Gampaha',
+    'location': {'latitude': 7.2008, 'longitude': 79.8737},
+    'nearest_city': 'Katana',
+    'open_status': null,
+    'description':
+        'A beauty salon is an establishment that offers a variety of cosmetic treatments and cosmetic services for men and women. Beauty salons may offer a variety of services including professional hair cutting and styling, manicures and pedicures, and often cosmetics, makeup and makeovers.',
+    'shedule': [
+      {
+        'date': 'Monday',
+        'openTime': '10:00',
+        'closeTime': '19:00',
+        'open': true,
+      },
+      {
+        'date': 'Tuesday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+      {
+        'date': 'Wednesday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+      {
+        'date': 'Thursday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+      {
+        'date': 'Friday',
+        'openTime': '06:00',
+        'closeTime': '18:00',
+        'open': true,
+      },
+      {
+        'date': 'Saturday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+      {
+        'date': 'Sunday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+    ],
+    'about_us': null,
+    'pro_pic_1':
+        'https://res.cloudinary.com/xsalonce/image/upload/v1653639235/xsalonce_images/mf1clk4cwm3642eauxdc.jpg',
+    'pro_pic_2':
+        'https://res.cloudinary.com/xsalonce/image/upload/v1653639246/xsalonce_images/yqouxjtfhnpe25lpyc9r.jpg',
+    'gallery': [],
+    // 'category': ['Cleanup', 'Massage'],
+    'owners_id': {},
+    'product': []
   },
+  {
+    'salonName': 'Salon GoodLook',
+    'rating': '4.8',
+    'rateAmount': '10',
+    'category': 'Hair Cut, Facial',
+    'imgUrl':
+        'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
+    'bgColor': Color(0xffEBF6FF),
+
+    'name': 'salon muthu',
+    'address': '57/B , Aparekka Road , Ragama',
+    'location': {'latitude': 7.2303, 'longitude': 80.0165},
+    'nearest_city': 'Katana',
+    'open_status': null,
+    'description':
+        'A beauty salon is an establishment that offers a variety of cosmetic treatments and cosmetic services for men and women. Beauty salons may offer a variety of services including professional hair cutting and styling, manicures and pedicures, and often cosmetics, makeup and makeovers.',
+    'shedule': [
+      {
+        'date': 'Monday',
+        'openTime': '10:00',
+        'closeTime': '19:00',
+        'open': true,
+      },
+      {
+        'date': 'Tuesday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+      {
+        'date': 'Wednesday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+      {
+        'date': 'Thursday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+      {
+        'date': 'Friday',
+        'openTime': '06:00',
+        'closeTime': '18:00',
+        'open': true,
+      },
+      {
+        'date': 'Saturday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+      {
+        'date': 'Sunday',
+        'openTime': '08:00',
+        'closeTime': '21:00',
+        'open': true,
+      },
+    ],
+    'about_us': null,
+    'pro_pic_1':
+        'https://res.cloudinary.com/xsalonce/image/upload/v1653639235/xsalonce_images/mf1clk4cwm3642eauxdc.jpg',
+    'pro_pic_2':
+        'https://res.cloudinary.com/xsalonce/image/upload/v1653639246/xsalonce_images/yqouxjtfhnpe25lpyc9r.jpg',
+    'gallery': [],
+    // 'category': ['Cleanup', 'Massage'],
+    'owners_id': {},
+    'product': []
+  }
 ];
 
 class HomeScreen extends StatelessWidget {
@@ -57,26 +310,26 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   var salonData1 = [];
 
-  void fetchPosts() async {
-    print("working");
-    try {
-      final response =
-          await get(Uri.parse("https://jsonplaceholder.typicode.com/users/"));
-      final jsonData = jsonDecode(response.body);
-      print(jsonData);
-      setState(() {
-        salonData1 = jsonData;
-      });
-      print(salonData1);
-    } catch (err) {
-      print(err);
-    }
-  }
-
-  void initState() {
-    fetchPosts();
-    super.initState();
-  }
+  // void fetchPosts() async {
+  //   print("working");
+  //   try {
+  //     final response =
+  //         await get(Uri.parse("10.0.2.2://api/salon/owner/6285f0418a5f1935e3635473"));
+  //     final jsonData = jsonDecode(response.body);
+  //     print(jsonData);
+  //     setState(() {
+  //       salonData1 = jsonData;
+  //     });
+  //     print(salonData1);
+  //   } catch (err) {
+  //     print(err);
+  //   }
+  // }
+  //
+  // void initState() {
+  //   fetchPosts();
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -131,7 +384,7 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: [
                       const SizedBox(
-                        height: 20,
+                        height: 40,
                       ),
                       // Container(
                       //   height: 300,
@@ -157,9 +410,19 @@ class _HomePageState extends State<HomePage> {
                           fontSize: 20,
                         ),
                       ),
-                      SalonCard(salonData[0]),
-                      SalonCard(salonData[1]),
-                      SalonCard(salonData[2]),
+                      ListView.builder(
+                          itemCount: salonData.length,
+                          itemBuilder: (context, index) {
+                            return Container(
+                              color: Colors.blue,
+                              padding: EdgeInsets.all(5),
+                              child: SalonCard([index]),
+                            );
+                          }),
+                      // SalonCard(salonData[0]),
+                      // SalonCard(salonData[1]),
+                      // SalonCard(salonData[2]),
+                      // SalonCard(salonData[3]),
                     ],
                   ),
                 ),
@@ -175,8 +438,6 @@ class _HomePageState extends State<HomePage> {
 class SalonCard extends StatelessWidget {
   final salon;
 
-  HomePage homePage = new HomePage();
-
   SalonCard(this.salon);
 
   @override
@@ -184,7 +445,7 @@ class SalonCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 20),
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height / 4 - 20,
+      height: MediaQuery.of(context).size.height / 4 - 30,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: salon['bgColor'],
@@ -202,7 +463,7 @@ class SalonCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 10, left: 10),
+            padding: const EdgeInsets.only(top: 40, left: 30),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -220,7 +481,7 @@ class SalonCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 2,
+                  height: 10,
                 ),
                 Row(
                   children: [
@@ -240,7 +501,7 @@ class SalonCard extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 5,
+                  height: 20,
                 ),
                 MaterialButton(
                   onPressed: () {
@@ -254,7 +515,7 @@ class SalonCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: const Text(
-                    'Browse',
+                    'Goto Salon',
                     style: TextStyle(
                       color: Colors.white,
                     ),
