@@ -47,7 +47,7 @@ class _LogInScreenState extends State<LogInScreen> {
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height / 2 - 30,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
@@ -73,8 +73,8 @@ class _LogInScreenState extends State<LogInScreen> {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(
+          const Padding(
+            padding: EdgeInsets.only(
               left: 20,
               bottom: 30,
               top: 50,
@@ -143,7 +143,7 @@ class _LogInScreenState extends State<LogInScreen> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Center(

@@ -1,11 +1,14 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:xsalonce_mobile/screens/salon_view_screen.dart';
+import 'package:http/http.dart' as http;
 
 const salonData = [
   {
     'salonName': 'Salon GoodLook',
     'rating': '4.8',
-    'rateAmount':'10',
+    'rateAmount': '10',
     'category': 'Hair Cut, Facial',
     'imgUrl':
         'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
@@ -14,7 +17,7 @@ const salonData = [
   {
     'salonName': 'Salon Butello',
     'rating': '4.6',
-    'rateAmount':'15',
+    'rateAmount': '15',
     'category': 'Hair Cut, Coloring',
     'imgUrl':
         'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1611&q=80',
@@ -23,7 +26,7 @@ const salonData = [
   {
     'salonName': 'Salon Opal',
     'rating': '4.7',
-    'rateAmount':'18',
+    'rateAmount': '18',
     'category': 'Massage, Facial',
     'imgUrl':
         'https://images.unsplash.com/photo-1632345031435-8727f6897d53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
@@ -52,109 +55,116 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var salonData1 = [];
+
+  void fetchPosts() async {
+    print("working");
+    try {
+      final response =
+          await get(Uri.parse("https://jsonplaceholder.typicode.com/users/"));
+      final jsonData = jsonDecode(response.body);
+      print(jsonData);
+      setState(() {
+        salonData1 = jsonData;
+      });
+      print(salonData1);
+    } catch (err) {
+      print(err);
+    }
+  }
+
+  void initState() {
+    fetchPosts();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-        appBar: AppBar(
-          // flexibleSpace: Image.asset(
-          //   'assets/images/image1.png',
-          //   fit: BoxFit.cover,
-          // ),
-          flexibleSpace: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color.fromARGB(255, 252, 92, 125),
-                  Color.fromARGB(255, 106, 130, 251),
-                ],
-              ),
-            ),
-          ),
-          // bottom: const TabBar(
-          //   tabs: [
-          //     Tab(
-          //       icon: Icon(
-          //         Icons.search,
-          //         color: Colors.indigo,
-          //         size: 30,
-          //       ),
-          //       text: "Search",
-          //     ),
-          //     Tab(
-          //       icon: Icon(
-          //         Icons.location_on_sharp,
-          //         color: Colors.orange,
-          //       ),
-          //       text: 'Nearby',
-          //     ),
-          //     Tab(
-          //       icon: Icon(
-          //         Icons.favorite,
-          //         color: Colors.red,
-          //       ),
-          //       text: 'Favourite',
-          //     ),
-          //   ],
-          // ),
-          leading: IconButton(
-            icon: const Icon(
-              Icons.face_sharp,
-              size: 40,
-              color: Colors.black,
-            ),
-            onPressed: () {},
-          ),
-          backgroundColor: Colors.purple,
-          title: const Text(
-            'Xsalonce',
-            style: TextStyle(
-              fontSize: 23.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            ),
-          ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.more_vert,
-                color: Colors.white,
-              ),
-            )
-          ],
-        ),
-        body: SingleChildScrollView(
-          child: SafeArea(
-            child: Column(
-              children: [
-                Container(
-                  height: MediaQuery.of(context).size.height,
-                  width: MediaQuery.of(context).size.width,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 30),
-                    child: Column(
-                      children: [
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        const Text(
-                          'Assist Your Every Appointment',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
-                        ),
-                        SalonCard(salonData[0]),
-                        SalonCard(salonData[1]),
-                        SalonCard(salonData[2]),
-                      ],
-                    ),
-                  ),
-                ),
+    return Scaffold(
+      appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 252, 92, 125),
+                Color.fromARGB(255, 106, 130, 251),
               ],
             ),
+          ),
+        ),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.face_sharp,
+            size: 40,
+            color: Colors.black,
+          ),
+          onPressed: () {},
+        ),
+        backgroundColor: Colors.purple,
+        title: const Text(
+          'Xsalonce',
+          style: TextStyle(
+            fontSize: 23.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.more_vert,
+              color: Colors.white,
+            ),
+          )
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            children: [
+              Container(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      // Container(
+                      //   height: 300,
+                      //   width: 300,
+                      //   child: ListView.builder(
+                      //       itemCount: salonData1.length,
+                      //       itemBuilder: (context, index) {
+                      //         return Container(
+                      //           color: Colors.blue,
+                      //           padding: EdgeInsets.all(5),
+                      //           child: Card(
+                      //               child: ListTile(
+                      //             title: Text(salonData1[index]['name']),
+                      //             subtitle: Text(salonData1[index]['email']),
+                      //           )),
+                      //         );
+                      //       }),
+                      // ),
+                      const Text(
+                        'Assist Your Every Appointment',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                      SalonCard(salonData[0]),
+                      SalonCard(salonData[1]),
+                      SalonCard(salonData[2]),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -164,6 +174,8 @@ class _HomePageState extends State<HomePage> {
 
 class SalonCard extends StatelessWidget {
   final salon;
+
+  HomePage homePage = new HomePage();
 
   SalonCard(this.salon);
 
