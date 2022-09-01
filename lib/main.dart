@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:xsalonce_mobile/screens/log_in_screen.dart';
 import 'package:xsalonce_mobile/screens/map_screen.dart';
 import 'package:xsalonce_mobile/screens/register_screen.dart';
+import 'package:xsalonce_mobile/screens/salon_view_screen.dart';
 import 'package:xsalonce_mobile/screens/search_box.dart';
 import 'package:xsalonce_mobile/screens/search_by_location.dart';
+import 'package:xsalonce_mobile/screens/welcome_screen.dart';
 import '/screens/home_screen.dart';
 import 'package:xsalonce_mobile/screens/search_screen.dart';
 
@@ -19,10 +21,15 @@ class MyApp extends StatelessWidget {
       routes: {
         // '/': (context) => const SearchBox(),
         // '/register':(context)=>const RegisterScreen(),
-        '/':(context)=>const HomeScreen(),
+        // '/':(context)=>const HomeScreen(),
         // '/search':(context)=>const SearchBox(),
         // '/map_screen':(context)=>const MapScreen(),
         // '/':(context)=>const MapScreen(),
+        // '/':(context)=>const LogInScreen(),
+        '/':(context)=>const WelcomeScreen(),
+        '/home_screen':(context)=>HomePage(),
+        '/home_screen/search_box':(context)=>SearchBox(),
+
       },
 
     );

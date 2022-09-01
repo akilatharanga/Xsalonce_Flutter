@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:xsalonce_mobile/common/colors.dart';
 import 'package:xsalonce_mobile/common/sizes.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
+
+import 'package:xsalonce_mobile/screens/salon_view_screen.dart';
 
 const List<String> name = <String>[
   'Salon Chathu',
@@ -16,26 +19,26 @@ const List<String> service = <String>[
   'Massage',
   'Bridal',
 ];
-const List<String> location = <String>[
+List<String> location = <String>[
   'Gampaha',
   'Colombo',
   'Matara',
   'Kadawatha',
   'Peradeniya',
-  'Kadawatha1',
-  'Kadawatha2',
-  'Kadawatha3',
-  'Kadawatha4',
-  'Kadawatha5',
-  'Kadawatha6',
-  'Kadawatha7',
-  'Kadawatha8',
-  'Kadawatha9',
-  'Kadawatha10',
-  'Kadawatha11',
-  'Kadawatha12',
-  'Kadawatha13',
-  'Kadawatha14'
+  'Maharagama',
+  'Anuradhappura',
+  'Mawathagama',
+  'Kurunegala',
+  'Kegalle',
+  'Galle',
+  'Negombo',
+  'Piliyandala',
+  'Borella',
+  'Maradana',
+  'Madakalapuwa',
+  'Thalawathugoda',
+  'Jaffna',
+  'Ampara'
 ];
 
 // class SearchBox extends StatelessWidget {
@@ -57,44 +60,51 @@ class SearchBox extends StatefulWidget {
 }
 
 class _SearchBoxState extends State<SearchBox> {
-
-  var salonData1 = [];
-  var nCategory = [];
-  var categoryString;
-  var categorylen = [];
-
-  void fetchPosts() async {
-    // print("working");
-    try {
-      final response = await get(Uri.parse(
-          "https://xsalonce-backend.herokuapp.com/api/salon/owner/6285f0418a5f1935e3635473"));
-
-      final jsonData = jsonDecode(response.body);
-      // print(jsonData);
-      setState(() {
-        salonData1 = jsonData;
-      });
-
-      // print(salonData1);
-      // print(nCategory);
-      // print(categorylen);
-    } catch (err) {
-      print(err);
-    }
-  }
-
-  @override
-  void initState() {
-    fetchPosts();
-    super.initState();
-  }
-
+  // var salonData1 = [];
+  // var nCategory = [];
+  // var categoryString;
+  // var cityData = [];
+  // var cityName = [];
+  // var categorylen = [];
+  //
+  // void fetchPosts() async {
+  //   // print("working");
+  //   try {
+  //     final responseCities = await get(
+  //       Uri.parse("https://xsalonce-backend.herokuapp.com/api/get/cities"),
+  //     );
+  //
+  //     final cityJsonData = jsonDecode(responseCities.body);
+  //     // print(jsonData);
+  //     setState(() {
+  //       cityData = cityJsonData;
+  //     });
+  //
+  //     cityData.forEach((element) {
+  //       cityName = cityData[element]['name_en'];
+  //     });
+  //     print(cityName);
+  //
+  //     // print(salonData1);
+  //     // print(nCategory);
+  //     // print(categorylen);
+  //   } catch (err) {
+  //     print(err);
+  //   }
+  // }
+  //
+  // @override
+  // void initState() {
+  //   fetchPosts();
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.purple.shade200,
+      backgroundColor: kColor1,
       body: Center(
+
         child: Container(
           // color: Colors.white,
           decoration: BoxDecoration(
@@ -110,7 +120,7 @@ class _SearchBoxState extends State<SearchBox> {
             children: [
               Padding(
                 padding: EdgeInsets.only(
-                  top: 20.0,
+                  top: 10.0,
                   right: 10.0,
                   bottom: 20.0,
                   left: 10.0,
@@ -169,7 +179,9 @@ class _SearchBoxState extends State<SearchBox> {
                     ),
                     Center(
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,MaterialPageRoute(builder: (context)=>SalonViewScreen([0])));
+                        },
                         child: Container(
                             margin: EdgeInsets.only(
                               top: 5.0,

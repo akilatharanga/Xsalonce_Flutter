@@ -4,6 +4,7 @@ import 'package:http/http.dart';
 import 'package:xsalonce_mobile/common/sizes.dart';
 import 'package:xsalonce_mobile/screens/map_screen.dart';
 import 'package:xsalonce_mobile/screens/salon_view_screen.dart';
+import 'package:xsalonce_mobile/screens/search_box.dart';
 
 // import 'package:http/http.dart' as http;
 import 'package:xsalonce_mobile/screens/search_by_location.dart';
@@ -101,7 +102,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SearchScreen()));
+                  MaterialPageRoute(builder: (context) => SearchBox()));
             },
             icon: Icon(Icons.search_rounded),
           ),
@@ -211,12 +212,12 @@ class SalonCard extends StatelessWidget {
                 ),
                 MaterialButton(
                   onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => SalonViewScreen(salon),
-                    //   ),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SalonViewScreen(salon),
+                      ),
+                    );
                   },
                   color: const Color(0xff4E295B),
                   shape: RoundedRectangleBorder(

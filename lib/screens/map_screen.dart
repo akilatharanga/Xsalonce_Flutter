@@ -13,6 +13,33 @@ class _MapScreenState extends State<MapScreen> {
   static const LatLng defaultLocation = LatLng(6.9271,79.8612);
   static const LatLng destination = LatLng(5.9496, 80.5469);
 
+  Set<Marker> _markers = {};
+
+  // void _onMapCreated(GoogleMapController controller){
+  //   setState(() {
+  //     _markers.add(
+  //       Marker(markerId: MarkerId('id-1'),
+  //       position: LatLng(7.084,80.0098),
+  //         infoWindow: InfoWindow(
+  //           title: 'Salon Chathu',
+  //         ),
+  //       ),
+  //       Marker(markerId: MarkerId('id-1'),
+  //         position: LatLng(6.9271,79.8612),
+  //         infoWindow: InfoWindow(
+  //           title: 'Salon Chathu',
+  //         ),
+  //       ),
+  //       Marker(markerId: MarkerId('id-1'),
+  //         position: LatLng(),
+  //         infoWindow: InfoWindow(
+  //           title: 'Salon Chathu',
+  //         ),
+  //       ),
+  //     );
+  //   });
+  // }
+
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +48,35 @@ class _MapScreenState extends State<MapScreen> {
         child: GoogleMap(
           initialCameraPosition: CameraPosition(
             target: defaultLocation,
-            zoom: 14.5,
+            zoom: 10,
 
           ),
-          markers: {},
+          markers: {
+            Marker(markerId: MarkerId('id-1'),
+              position: LatLng(7.084,80.0098),
+              infoWindow: InfoWindow(
+                title: 'Salon Chathu',
+              ),
+            ),
+            Marker(markerId: MarkerId('id-1'),
+              position: LatLng(6.9271,79.8612),
+              infoWindow: InfoWindow(
+                title: 'hair with flair',
+              ),
+            ),
+            Marker(markerId: MarkerId('id-1'),
+              position: LatLng(7.2008,79.8737),
+              infoWindow: InfoWindow(
+                title: 'Salon Chathu',
+              ),
+            ),
+            Marker(markerId: MarkerId('id-1'),
+              position: LatLng(7.2303,80.0165),
+              infoWindow: InfoWindow(
+                title: 'Salon Opal',
+              ),
+            ),
+          },
         ),
       ),
     );
