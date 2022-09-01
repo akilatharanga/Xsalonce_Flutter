@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:snippet_coder_utils/FormHelper.dart';
 import 'package:snippet_coder_utils/ProgressHUD.dart';
 import 'package:snippet_coder_utils/hex_color.dart';
+import '../common/sizes.dart';
 import 'package:snippet_coder_utils/list_helper.dart';
 import 'package:snippet_coder_utils/multi_images_utils.dart';
 
@@ -45,8 +46,8 @@ class _LogInScreenState extends State<LogInScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height / 2 - 30,
+            width: kVWidth(context, 1),
+            height: kVHeight(context, 0.5),
             decoration: const BoxDecoration(
                 gradient: LinearGradient(
                     begin: Alignment.topCenter,
@@ -67,7 +68,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   child: Image.asset(
                     "assets/images/image1.png",
                     fit: BoxFit.contain,
-                    width: 350,
+                    width: kVWidth(context, 0.8),
                   ),
                 )
               ],
