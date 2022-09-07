@@ -148,8 +148,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             height: 100,
           ),
           Center(
-            child: Text('XSalonce',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 50.0,color: Colors.white),),
+            child: Column(
+              children: [
+                Text('XSalonce',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 50.0,color: Colors.white),),
+                Text('Assist Your Every Appoinment',style: TextStyle(color: Colors.white,fontSize: 18.0),)
+              ],
+            ),
           ),
+          
           const SizedBox(
             height: 50,
           ),

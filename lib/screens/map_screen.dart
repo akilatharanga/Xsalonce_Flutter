@@ -10,7 +10,7 @@ class MapScreen extends StatefulWidget {
 
 class _MapScreenState extends State<MapScreen> {
 
-  static const LatLng defaultLocation = LatLng(6.9271,79.8612);
+  static const LatLng defaultLocation = LatLng(5.949401,80.543284);
   static const LatLng destination = LatLng(5.9496, 80.5469);
 
   Set<Marker> _markers = {};
@@ -65,7 +65,7 @@ class _MapScreenState extends State<MapScreen> {
               ),
             ),
             Marker(markerId: MarkerId('id-1'),
-              position: LatLng(7.2008,79.8737),
+              position: LatLng(5.949401,80.543284),
               infoWindow: InfoWindow(
                 title: 'Salon Chathu',
               ),

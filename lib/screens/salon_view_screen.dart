@@ -4,6 +4,7 @@ class SalonViewScreen extends StatelessWidget {
   final salon;
 
 
+
   SalonViewScreen(this.salon);
 
   var serviceList = [
@@ -85,10 +86,13 @@ class SalonViewScreen extends StatelessWidget {
                           const SizedBox(
                             height: 30,
                           ),
-                          ServiceTile(serviceList[0]),
-                          ServiceTile(serviceList[1]),
-                          ServiceTile(serviceList[2]),
-                          ServiceTile(serviceList[3]),
+                          // ServiceTile(serviceList[0]),
+                          // ServiceTile(serviceList[1]),
+                          // ServiceTile(serviceList[2]),
+                          // ServiceTile(serviceList[3]),
+                          ListView.builder(itemBuilder: (context,index){
+                            return ServiceTile(serviceList[index]);
+                          }),
                         ],
                       ),
                     ),

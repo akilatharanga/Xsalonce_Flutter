@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:xsalonce_mobile/common/sizes.dart';
 import 'package:xsalonce_mobile/screens/map_screen.dart';
 import 'package:xsalonce_mobile/screens/salon_view_screen.dart';
@@ -15,6 +16,8 @@ String? category = '';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +47,10 @@ class _HomePageState extends State<HomePage> {
     try {
       final response = await get(
         Uri.parse(
-            "https://xsalonce-backend.herokuapp.com/api/salon/owner/6285f0418a5f1935e3635473"),
+            // "https://xsalonce-backend.herokuapp.com/api/salon/owner/6285f0418a5f1935e3635473"
+            //     "http://192.168.1.102:5000/api/salon/owner/6285f0418a5f1935e3635473"
+          "https://xsalonce-backend.herokuapp.com/api/salon/get/all/salon-list"
+        ),
       );
 
       final jsonData = jsonDecode(response.body);
@@ -52,6 +58,7 @@ class _HomePageState extends State<HomePage> {
       setState(() {
         salonData1 = jsonData;
       });
+      // print(salonData1);
 
       // print(salonData1);
       // print(nCategory);
@@ -99,27 +106,27 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SearchBox()));
-            },
-            icon: Icon(Icons.search_rounded),
-          ),
+          // IconButton(
+          //   onPressed: () {
+          //     Navigator.push(context,
+          //         MaterialPageRoute(builder: (context) => SearchBox()));
+          //   },
+          //   icon: Icon(Icons.search_rounded),
+          // ),
           IconButton(
             onPressed: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => MapScreen()));
             },
-            icon: Icon(Icons.location_on),
+            icon: Icon(Icons.location_on,size: 35.0,),
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.more_vert,
-              color: Colors.white,
-            ),
-          ),
+          // IconButton(
+          //   onPressed: () {},
+          //   icon: const Icon(
+          //     Icons.more_vert,
+          //     color: Colors.white,
+          //   ),
+          // ),
         ],
       ),
       body: ListView.builder(
@@ -140,6 +147,22 @@ class SalonCard extends StatelessWidget {
   int length;
 
   SalonCard(this.salon, this.index, this.length);
+
+  final Uri _url = Uri.parse('https://xsaloncelk.web.app');
+
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw 'Could not launch $_url';
+    }
+  }
+  // launchURL(String url) async{
+  //   if (await canLaunch(url)){
+  //     await launch(url);
+  //   }else{
+  //     throw "Could not found $url";
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -211,20 +234,22 @@ class SalonCard extends StatelessWidget {
                   height: 20,
                 ),
                 MaterialButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => SalonViewScreen(salon),
-                      ),
-                    );
-                  },
+                  onPressed: _launchUrl,
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => SalonViewScreen(salon[index]),
+                    //   ),
+                    // );
+
+
+
                   color: const Color(0xff4E295B),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: const Text(
-                    'Goto Salon',
+                    'Visit Salon',
                     style: TextStyle(
                       color: Colors.white,
                     ),

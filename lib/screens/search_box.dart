@@ -102,9 +102,8 @@ class _SearchBoxState extends State<SearchBox> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kColor1,
+      backgroundColor: Colors.white,
       body: Center(
-
         child: Container(
           // color: Colors.white,
           decoration: BoxDecoration(
@@ -118,7 +117,7 @@ class _SearchBoxState extends State<SearchBox> {
           width: kVWidth(context, 0.7),
           child: Column(
             children: [
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(
                   top: 10.0,
                   right: 10.0,
@@ -129,14 +128,14 @@ class _SearchBoxState extends State<SearchBox> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.home_work_outlined,
                     size: 40,
                   ),
                   SizedBox(
                     width: kVWidth(context, 0.05),
                   ),
-                  Text(
+                  const Text(
                     'Search Salon',
                     style: TextStyle(
                       fontSize: 35,
@@ -149,7 +148,7 @@ class _SearchBoxState extends State<SearchBox> {
                 height: kVHeight(context, 0.05),
               ),
               Container(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   top: 10.0,
                   right: 10.0,
                   left: 10.0,
@@ -165,38 +164,41 @@ class _SearchBoxState extends State<SearchBox> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    DropDownName(),
+                    const DropDownName(),
                     SizedBox(
                       height: kVHeight(context, 0.01),
                     ),
-                    DropDownService(),
+                    const DropDownService(),
                     SizedBox(
                       height: kVHeight(context, 0.01),
                     ),
-                    DropDownLocation(),
+                    const DropDownLocation(),
                     SizedBox(
                       height: kVHeight(context, 0.01),
                     ),
                     Center(
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.push(context,MaterialPageRoute(builder: (context)=>SalonViewScreen([0])));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SalonViewScreen([0])));
                         },
                         child: Container(
-                            margin: EdgeInsets.only(
+                            margin: const EdgeInsets.only(
                               top: 5.0,
                               bottom: 5.0,
                               right: 20.0,
                               left: 20.0,
                             ),
-                            child: Text(
+                            child: const Text(
                               'Search...',
                               style: TextStyle(
                                 fontSize: 18.0,
                               ),
                             )),
                         style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                             horizontal: 16,
                           ),
                           shape: const RoundedRectangleBorder(
@@ -256,7 +258,7 @@ class _DropDownNameState extends State<DropDownName> {
           value: value,
           child: Text(
             value,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               color: Colors.black,
               fontWeight: FontWeight.bold,
@@ -305,7 +307,7 @@ class _DropDownServiceState extends State<DropDownService> {
           value: value,
           child: Text(
             value,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               color: Colors.black,
               fontWeight: FontWeight.bold,
@@ -355,7 +357,7 @@ class _DropDownLocationState extends State<DropDownLocation> {
           child: Text(
             // overflow: TextOverflow.ellipsis,
             value,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               color: Colors.black,
               fontWeight: FontWeight.bold,
